@@ -8,7 +8,7 @@ class TransparentBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlurryContainer(
       color: Colors.black.withOpacity(0.5),
-      blur: 5,
+      blur: 10,
       width: 400,
       height: 160,
       elevation: 0,

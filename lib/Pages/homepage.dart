@@ -30,27 +30,29 @@ class HomePage extends StatelessWidget {
                 ),
 
                 child: Icon(
-                  Icons.apps, size: 25,
+                  Icons.menu, size: 25,
                 ),),
           ),
           actions: [
             Padding(
-              padding: const EdgeInsets.all(12.0),
-              child: Container(
-                height: 40,
-                width: 40,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(
-                    color: Colors.grey.shade700,
-                    width: 1,
-                  )
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(15),
-                  child: Image.asset('lib/images/pic.jpg',
-                    fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
+              padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 0),
+              child: Center(
+                child: Container(
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(
+                      color: Color(0xFF322725),
+                      width: 1,
+                    )
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.asset('lib/images/pic.jpg',
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                    ),
                   ),
                 ),
               ),

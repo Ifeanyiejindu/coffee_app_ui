@@ -15,7 +15,6 @@ class ProductDetail extends StatelessWidget {
             width: 400,
             height: 500,
             decoration: BoxDecoration(
-              color: Colors.orange,
               borderRadius: BorderRadius.circular(30)
             ),
             child: ClipRRect(
