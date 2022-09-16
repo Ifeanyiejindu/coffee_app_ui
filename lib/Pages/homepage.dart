@@ -1,4 +1,5 @@
 import 'package:coffee_app_ui/Utils/coffee_tile.dart';
+import 'package:coffee_app_ui/Utils/dot_indicator.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -106,29 +107,34 @@ class HomePage extends StatelessWidget {
             ),
 
             SizedBox(height: 25,),
-            TabBar(
-                tabs:[
-              Tab(child: Text('Cappucino')),
-              Tab(child: Text('Espresso')),
-              Tab(child: Text('Latte')),
-              Tab(child: Text('Flat Wa')),
-            ]),
+            Container(
+              width: double.maxFinite,
+              child: TabBar(
+                indicator: DotIndicator(color:Color(0xFFD17742),radius: 4  ),
+                isScrollable: true,
+                labelColor: Color(0xFFD17742),
+                  unselectedLabelColor: Colors.white70,
+                  tabs:[
+                Tab(child: Text('Cappucino', style: TextStyle(fontSize: 17),)),
+                Tab(child: Text('Espresso', style: TextStyle(fontSize: 17))),
+                Tab(child: Text('Latte', style: TextStyle(fontSize: 17))),
+                Tab(child: Text('Flat Wa', style: TextStyle(fontSize: 17))),
+              ]),
+            ),
 
             Expanded(
               child: TabBarView(children: [
-                Expanded(
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      CoffeeTiles(imagePath: _coffeeDetails[0][0],
-                        accompanyingTopings: _coffeeDetails[0][1],
-                        amount: _coffeeDetails[0][2],),
-                      CoffeeTiles(imagePath: _coffeeDetails[1][0],
-                        accompanyingTopings: _coffeeDetails[1][1],
-                        amount: _coffeeDetails[1][2],),
+                ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    CoffeeTiles(imagePath: _coffeeDetails[0][0],
+                      accompanyingTopings: _coffeeDetails[0][1],
+                      amount: _coffeeDetails[0][2],),
+                    CoffeeTiles(imagePath: _coffeeDetails[1][0],
+                      accompanyingTopings: _coffeeDetails[1][1],
+                      amount: _coffeeDetails[1][2],),
 
-                    ],
-                  ),
+                  ],
                 ),
                 Expanded(
                   child: ListView(

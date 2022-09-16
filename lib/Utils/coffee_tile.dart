@@ -1,3 +1,4 @@
+import 'package:coffee_app_ui/Pages/product_detail.dart';
 import 'package:flutter/material.dart';
 
 class CoffeeTiles extends StatelessWidget {
@@ -40,10 +41,15 @@ class CoffeeTiles extends StatelessWidget {
               //title of the scrolling coffee
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-                child: Text('Cappiccino', style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 23,
-                ),),
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (BuildContext){return ProductDetail();},),);
+                  },
+                  child: Text('Cappiccino', style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 23,
+                  ),),
+                ),
               ),
 
               //with oat milk or chocolate
